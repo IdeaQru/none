@@ -1,29 +1,23 @@
-import { PrismaClient } from "@prisma/client";
+import {PrismaClient} from "@prisma/client";
 
-// Extending PrismaClient with additional properties/methods
-class PrismaClientExtended extends PrismaClient {
-  someCustomMethod() {
-    // custom implementation
-  }
-}
-
-export const prisma = new PrismaClientExtended({
-  log: [
-    {
-      emit: "event",
-      level: "query",
-    },
-    {
-      emit: "stdout",
-      level: "error",
-    },
-    {
-      emit: "stdout",
-      level: "info",
-    },
-    {
-      emit: "stdout",
-      level: "warn",
-    },
-  ],
+export const prisma = new PrismaClient({
+    log: [
+        {
+            emit: "event",
+            level: "query"
+        },
+        {
+            emit: "event",
+            level: "error"
+        },
+        {
+            emit: "event",
+            level: "info"
+        },
+        {
+            emit: "event",
+            level: "warn"
+        }
+    ]
 });
+
